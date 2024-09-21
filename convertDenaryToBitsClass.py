@@ -2,7 +2,6 @@
 # Also mutating input arguments is bad form but I'm not sure of a nice way of tracking state that isn't just establishing an internal variable that mirrors the input
 
 class binaryOperations:
-
     @staticmethod
     def findLargestPowerOfTwo(inputInt: int):
         power = int(2)
@@ -21,7 +20,7 @@ class binaryOperations:
             quantity = quantity + 1
             
         return quantity
-
+    
     @staticmethod
     def returnListOfPowersOf2(inputInt: int):
         powers = [1,2]
@@ -52,6 +51,36 @@ class binaryOperations:
         bitsListRev = list(reversed(bitsList))
         
         return bitsListRev
+    
+    @staticmethod
+    def findBinaryPlaceValues(inputInt: int):
+        """Returns a list containing ordered binary place values
+
+        Args:
+            inputInt (int): The amount of positions to return in the list
+
+        Returns:
+            list: List with binary place
+        """
+        binaryPlaceValues = []
+        if inputInt:
+            for i in range(inputInt):
+                binaryPlaceValues.append(pow(2,i))
+            return binaryPlaceValues
+        else:
+            return binaryPlaceValues
+
+    @staticmethod
+    def convertBinaryToInt(bitList: list):
+        binaryPlaceValues = list(reversed(binaryOperations.findBinaryPlaceValues(len(bitList))))
+        finalInt = 0
+        for x in range(len(bitList)):
+            if bitList[x] == 1:
+                finalInt = finalInt + binaryPlaceValues[x]
+            else:
+                pass
+        return finalInt
+        
 
 
 # intToBeConverted = int(input("Enter Int: "))
