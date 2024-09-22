@@ -1,0 +1,325 @@
+[
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "unittest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "unittest",
+        "description": "unittest",
+        "detail": "unittest",
+        "documentation": {}
+    },
+    {
+        "label": "convertBinaryToInt",
+        "importPath": "binConvertClass",
+        "description": "binConvertClass",
+        "isExtraImport": true,
+        "detail": "binConvertClass",
+        "documentation": {}
+    },
+    {
+        "label": "findBitPlaceValues",
+        "kind": 2,
+        "importPath": "scratchpads.scratchpad",
+        "description": "scratchpads.scratchpad",
+        "peekOfCode": "def findBitPlaceValues(inputInt: int):\n    bitPlaceValues = [1]\n    currPlaceValue = 2\n    for i in range(inputInt):\n        #print(i)\n        bitPlaceValues.append(currPlaceValue)\n        currPlaceValue = currPlaceValue * 2\n    return bitPlaceValues\n'''\n'''",
+        "detail": "scratchpads.scratchpad",
+        "documentation": {}
+    },
+    {
+        "label": "findBitPlaceValues",
+        "kind": 2,
+        "importPath": "scratchpads.scratchpad",
+        "description": "scratchpads.scratchpad",
+        "peekOfCode": "def findBitPlaceValues(inputInt: int):\n    bitList = []\n    for i in range(inputInt):\n        print(i)\n        bitList.append(pow(2, i))\n    return bitList\n@staticmethod \ndef convertBitsToInt(inputList: list):\n    bitPlaceValues = findBitPlaceValues(len(inputList))\n    inputBits = inputList",
+        "detail": "scratchpads.scratchpad",
+        "documentation": {}
+    },
+    {
+        "label": "convertBitsToInt",
+        "kind": 2,
+        "importPath": "scratchpads.scratchpad",
+        "description": "scratchpads.scratchpad",
+        "peekOfCode": "def convertBitsToInt(inputList: list):\n    bitPlaceValues = findBitPlaceValues(len(inputList))\n    inputBits = inputList\n    print(len(bitPlaceValues) == len(inputBits))\n    print(bitPlaceValues)\n    print(inputList)\nconvertBitsToInt([0,1,0,0,0,1])\n#findBitPlaceValues(8)\nprint(findBitPlaceValues(0))\nprint(findBitPlaceValues(1))",
+        "detail": "scratchpads.scratchpad",
+        "documentation": {}
+    },
+    {
+        "label": "findBinaryPlaceValues",
+        "kind": 2,
+        "importPath": "scratchpads.scratchpad",
+        "description": "scratchpads.scratchpad",
+        "peekOfCode": "def findBinaryPlaceValues(inputInt: int):\n    binaryPlaceValues = [1]\n    currentPower = 1\n    while binaryPlaceValues[len(binaryPlaceValues)-1] < inputInt:\n        binaryPlaceValues.append(pow(2,currentPower))\n        currentPower = currentPower + 1\n    if not binaryPlaceValues:\n        binaryPlaceValues.append(1)\n    return binaryPlaceValues\ndef convertBitsToInt(inputList: list):",
+        "detail": "scratchpads.scratchpad",
+        "documentation": {}
+    },
+    {
+        "label": "convertBitsToInt",
+        "kind": 2,
+        "importPath": "scratchpads.scratchpad",
+        "description": "scratchpads.scratchpad",
+        "peekOfCode": "def convertBitsToInt(inputList: list):\n    binaryPlaceValues = list(reversed(findBinaryPlaceValues(len(inputList))))\n    inputBitsPlusPlaceValues = []\n    finalInt = 0\n    for i in range(len(inputList)):\n        inputBitsPlusPlaceValues.append([[int(inputList[i])],[int(binaryPlaceValues[i])]])\n    for x in range(len(inputBitsPlusPlaceValues)):\n        if int(inputBitsPlusPlaceValues[x][0][0]) == int(0):\n            #print(\"PASSING\")\n            pass",
+        "detail": "scratchpads.scratchpad",
+        "documentation": {}
+    },
+    {
+        "label": "findBinaryPlaceValues",
+        "kind": 2,
+        "importPath": "scratchpads.scratchpad2",
+        "description": "scratchpads.scratchpad2",
+        "peekOfCode": "def findBinaryPlaceValues(inputInt: int):\n    \"\"\"Returns a list containing ordered binary place values\n    Args:\n        inputInt (int): The amount of positions to return in the list\n    Returns:\n        list: List with binary place\n    \"\"\"\n    binaryPlaceValues = []\n    if inputInt:\n        for i in range(inputInt):",
+        "detail": "scratchpads.scratchpad2",
+        "documentation": {}
+    },
+    {
+        "label": "convertBinaryToInt",
+        "kind": 2,
+        "importPath": "scratchpads.scratchpad2",
+        "description": "scratchpads.scratchpad2",
+        "peekOfCode": "def convertBinaryToInt(bitList: list):\n    binaryPlaceValues = list(reversed(findBinaryPlaceValues(len(bitList))))\n    finalInt = 0\n    for x in range(len(bitList)):\n        if bitList[x] == 1:\n            finalInt = finalInt + binaryPlaceValues[x]\n        else:\n            pass\n    return finalInt\nprint(convertBinaryToInt([0])) # 0",
+        "detail": "scratchpads.scratchpad2",
+        "documentation": {}
+    },
+    {
+        "label": "testBinConvertClass",
+        "kind": 6,
+        "importPath": "tests._test",
+        "description": "tests._test",
+        "peekOfCode": "class testBinConvertClass(unittest.TestCase):\n    def testConvertBinaryToInt(self):\n        self.assertTrue(convertBinaryToInt([0]) == 0)",
+        "detail": "tests._test",
+        "documentation": {}
+    },
+    {
+        "label": "findLargestPowerOfTwo",
+        "kind": 2,
+        "importPath": "__OLD.__OLD",
+        "description": "__OLD.__OLD",
+        "peekOfCode": "def findLargestPowerOfTwo(inputInt: int):\n    power = int(2)\n    while power < inputInt:\n       power = power * 2 \n    return power\ndef findNeededBitsToStoreInt(inputInt: int):\n    quantity = int(1)\n    power = int(2)\n    while power <= inputInt:\n        power = power * 2",
+        "detail": "__OLD.__OLD",
+        "documentation": {}
+    },
+    {
+        "label": "findNeededBitsToStoreInt",
+        "kind": 2,
+        "importPath": "__OLD.__OLD",
+        "description": "__OLD.__OLD",
+        "peekOfCode": "def findNeededBitsToStoreInt(inputInt: int):\n    quantity = int(1)\n    power = int(2)\n    while power <= inputInt:\n        power = power * 2\n        quantity = quantity + 1\n    return quantity\ninputInt = int(input(\"What is your Int?: \"))\nprint(findLargestPowerOfTwo(inputInt))\nprint(\"Start is 63, \" + str(findLargestPowerOfTwo(63)))",
+        "detail": "__OLD.__OLD",
+        "documentation": {}
+    },
+    {
+        "label": "findLargestPowerOfTwo",
+        "kind": 2,
+        "importPath": "__OLD.__OLD",
+        "description": "__OLD.__OLD",
+        "peekOfCode": "def findLargestPowerOfTwo(inputInt: int):\n    power = int(2)\n    while power < inputInt:\n       power = power * 2 \n    return power\ndef findNeededBitsToStoreInt(inputInt: int):\n    quantity = int(1)\n    power = int(2)\n    while power <= inputInt:\n        power = power * 2",
+        "detail": "__OLD.__OLD",
+        "documentation": {}
+    },
+    {
+        "label": "findNeededBitsToStoreInt",
+        "kind": 2,
+        "importPath": "__OLD.__OLD",
+        "description": "__OLD.__OLD",
+        "peekOfCode": "def findNeededBitsToStoreInt(inputInt: int):\n    quantity = int(1)\n    power = int(2)\n    while power <= inputInt:\n        power = power * 2\n        quantity = quantity + 1\n    return quantity\ndef convertIntToBits(inputInt: int):\n    binaryPlaceValues = [1,2,4,8,16,32,64,128]\n    bitsList = [0] * findNeededBitsToStoreInt(inputInt)",
+        "detail": "__OLD.__OLD",
+        "documentation": {}
+    },
+    {
+        "label": "convertIntToBits",
+        "kind": 2,
+        "importPath": "__OLD.__OLD",
+        "description": "__OLD.__OLD",
+        "peekOfCode": "def convertIntToBits(inputInt: int):\n    binaryPlaceValues = [1,2,4,8,16,32,64,128]\n    bitsList = [0] * findNeededBitsToStoreInt(inputInt)\n    IntToList = list(map(int,str(inputInt)))\n    for x in enumerate(bitsList):\n        print(x.type())\n        x = int(x)\n        print(x)\n        binaryPlaceValue = binaryPlaceValues[x]\n        print(binaryPlaceValue)",
+        "detail": "__OLD.__OLD",
+        "documentation": {}
+    },
+    {
+        "label": "returnListOfPowersOf2",
+        "kind": 2,
+        "importPath": "__OLD.__OLD",
+        "description": "__OLD.__OLD",
+        "peekOfCode": "def returnListOfPowersOf2(inputInt: int):\n    powers = [1,2]\n    power = int(1)\n    while power < inputInt:\n        power = power * 2\n        if not power in powers:\n            powers.append(power)\n    return powers\nprint(returnListOfPowersOf2(128))\ndef findLargestPowerOfTwo(inputInt: int):",
+        "detail": "__OLD.__OLD",
+        "documentation": {}
+    },
+    {
+        "label": "findLargestPowerOfTwo",
+        "kind": 2,
+        "importPath": "__OLD.__OLD",
+        "description": "__OLD.__OLD",
+        "peekOfCode": "def findLargestPowerOfTwo(inputInt: int):\n    power = int(2)\n    while power < inputInt:\n       power = power * 2 \n    return power",
+        "detail": "__OLD.__OLD",
+        "documentation": {}
+    },
+    {
+        "label": "inputInt",
+        "kind": 5,
+        "importPath": "__OLD.__OLD",
+        "description": "__OLD.__OLD",
+        "peekOfCode": "inputInt = int(input(\"What is your Int?: \"))\nprint(findLargestPowerOfTwo(inputInt))\nprint(\"Start is 63, \" + str(findLargestPowerOfTwo(63)))\nprint(\"Start is 64, \" + str(findLargestPowerOfTwo(64)))\nprint(\"Start is 65, \" + str(findLargestPowerOfTwo(65)))\nprint(findNeededBitsToStoreInt(int(0))) # 1\nprint(findNeededBitsToStoreInt(int(1))) # 1\nprint(findNeededBitsToStoreInt(int(2))) # 2\nprint(findNeededBitsToStoreInt(int(3))) # 2\nprint(findNeededBitsToStoreInt(int(4))) # 3",
+        "detail": "__OLD.__OLD",
+        "documentation": {}
+    },
+    {
+        "label": "intToBeConverted",
+        "kind": 5,
+        "importPath": "__OLD.__OLD",
+        "description": "__OLD.__OLD",
+        "peekOfCode": "intToBeConverted = int(input(\"Enter Int number: \"))\nprint(convertIntToBits(intToBeConverted))\n'''\ndef returnListOfPowersOf2(inputInt: int):\n    powers = [1,2]\n    power = int(1)\n    while power < inputInt:\n        power = power * 2\n        if not power in powers:\n            powers.append(power)",
+        "detail": "__OLD.__OLD",
+        "documentation": {}
+    },
+    {
+        "label": "findLargestPowerOfTwo",
+        "kind": 2,
+        "importPath": "__OLD.__OLDconvertDenaryToBitsEnhanced",
+        "description": "__OLD.__OLDconvertDenaryToBitsEnhanced",
+        "peekOfCode": "def findLargestPowerOfTwo(inputInt: int):\n    power = int(2)\n    while power < inputInt:\n       power = power * 2 \n    return power\ndef findNeededBitsToStoreInt(inputInt: int):\n    quantity = int(1)\n    power = int(2)\n    while power <= inputInt:\n        power = power * 2",
+        "detail": "__OLD.__OLDconvertDenaryToBitsEnhanced",
+        "documentation": {}
+    },
+    {
+        "label": "findNeededBitsToStoreInt",
+        "kind": 2,
+        "importPath": "__OLD.__OLDconvertDenaryToBitsEnhanced",
+        "description": "__OLD.__OLDconvertDenaryToBitsEnhanced",
+        "peekOfCode": "def findNeededBitsToStoreInt(inputInt: int):\n    quantity = int(1)\n    power = int(2)\n    while power <= inputInt:\n        power = power * 2\n        quantity = quantity + 1\n    return quantity\ndef returnListOfPowersOf2(inputInt: int):\n    powers = [1,2]\n    power = int(1)",
+        "detail": "__OLD.__OLDconvertDenaryToBitsEnhanced",
+        "documentation": {}
+    },
+    {
+        "label": "returnListOfPowersOf2",
+        "kind": 2,
+        "importPath": "__OLD.__OLDconvertDenaryToBitsEnhanced",
+        "description": "__OLD.__OLDconvertDenaryToBitsEnhanced",
+        "peekOfCode": "def returnListOfPowersOf2(inputInt: int):\n    powers = [1,2]\n    power = int(1)\n    while power < inputInt:\n        power = power * 2\n        if not power in powers:\n            powers.append(power)\n    return powers\ndef convertIntToBits(inputInt: int):\n    binaryPlaceValues = returnListOfPowersOf2(inputInt)",
+        "detail": "__OLD.__OLDconvertDenaryToBitsEnhanced",
+        "documentation": {}
+    },
+    {
+        "label": "convertIntToBits",
+        "kind": 2,
+        "importPath": "__OLD.__OLDconvertDenaryToBitsEnhanced",
+        "description": "__OLD.__OLDconvertDenaryToBitsEnhanced",
+        "peekOfCode": "def convertIntToBits(inputInt: int):\n    binaryPlaceValues = returnListOfPowersOf2(inputInt)\n    bitsList = [0] * findNeededBitsToStoreInt(inputInt)\n    for y in reversed(binaryPlaceValues):\n        print(y)\n        if int(y) > inputInt:\n            print(\"Bit \" + str(binaryPlaceValues.index(y)) + \" Passing\")\n            pass\n        else:\n            print(\"Bit \" + str(binaryPlaceValues.index(y)) + \" Incrementing\")",
+        "detail": "__OLD.__OLDconvertDenaryToBitsEnhanced",
+        "documentation": {}
+    },
+    {
+        "label": "intToBeConverted",
+        "kind": 5,
+        "importPath": "__OLD.__OLDconvertDenaryToBitsEnhanced",
+        "description": "__OLD.__OLDconvertDenaryToBitsEnhanced",
+        "peekOfCode": "intToBeConverted = int(input(\"Enter Int: \"))\nprint(convertIntToBits(intToBeConverted))\n'''\n    Note to Arion:\n        We haven't yet done how to represent negative numbers in class, but effectively you use the first bit to represent positive [0] or negative [1] and then invert all the bits after\n        so 5 ( [0,1,0,1] ) would become -5 ( [1,0,1,0] )\n'''\n'''\nTODO:\n    * Auto-scale bitsList size",
+        "detail": "__OLD.__OLDconvertDenaryToBitsEnhanced",
+        "documentation": {}
+    },
+    {
+        "label": "findLargestPowerOfTwo",
+        "kind": 2,
+        "importPath": "__OLD.__OLDconvertDenaryToBitsLiveOriginal",
+        "description": "__OLD.__OLDconvertDenaryToBitsLiveOriginal",
+        "peekOfCode": "def findLargestPowerOfTwo(inputInt: int):\n    power = int(2)\n    while power < inputInt:\n       power = power * 2 \n    return power\ndef convertIntToBits(inputInt: int):\n    binaryPlaceValues = [1,2,4,8,16,32,64,128]\n    bitsList = [0,0,0,0,0,0,0,0]\n    IntToList = list(map(int,str(inputInt)))\n    for y in reversed(binaryPlaceValues):",
+        "detail": "__OLD.__OLDconvertDenaryToBitsLiveOriginal",
+        "documentation": {}
+    },
+    {
+        "label": "convertIntToBits",
+        "kind": 2,
+        "importPath": "__OLD.__OLDconvertDenaryToBitsLiveOriginal",
+        "description": "__OLD.__OLDconvertDenaryToBitsLiveOriginal",
+        "peekOfCode": "def convertIntToBits(inputInt: int):\n    binaryPlaceValues = [1,2,4,8,16,32,64,128]\n    bitsList = [0,0,0,0,0,0,0,0]\n    IntToList = list(map(int,str(inputInt)))\n    for y in reversed(binaryPlaceValues):\n        print(y)\n        if int(y) > inputInt:\n            print(\"Bit \" + str(binaryPlaceValues.index(y)) + \" Passing\")\n            pass\n        else:",
+        "detail": "__OLD.__OLDconvertDenaryToBitsLiveOriginal",
+        "documentation": {}
+    },
+    {
+        "label": "intToBeConverted",
+        "kind": 5,
+        "importPath": "__OLD.__OLDconvertDenaryToBitsLiveOriginal",
+        "description": "__OLD.__OLDconvertDenaryToBitsLiveOriginal",
+        "peekOfCode": "intToBeConverted = int(input(\"Enter Int number: \"))\nprint(convertIntToBits(intToBeConverted))\n'''\nTODO:\n    Auto-scale bitsList size\n    Error Handling\n    Convert from Binary to Int\n    Handle negative numbers\n    Use bitLists properly\n    Auto calculate binary place values",
+        "detail": "__OLD.__OLDconvertDenaryToBitsLiveOriginal",
+        "documentation": {}
+    },
+    {
+        "label": "binaryPlaceValues",
+        "kind": 5,
+        "importPath": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "description": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "peekOfCode": "binaryPlaceValues = [1,2,4,8,16,32,64,128] # There's a better way to do this but I can't be bothered\ndenaryStr = str(input(\"Enter denary number: \"))\ndenaryInt = int(denaryStr)\ndenaryToList = list(map(int,denaryStr))\nbitsList = [0,0,0,0,0,0,0,0]\n# print(denaryToList)\n'''\nfor x in reversed(denaryToList):\n    for y in reversed(binaryPlaceValues):\n        if y > x:",
+        "detail": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "documentation": {}
+    },
+    {
+        "label": "denaryStr",
+        "kind": 5,
+        "importPath": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "description": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "peekOfCode": "denaryStr = str(input(\"Enter denary number: \"))\ndenaryInt = int(denaryStr)\ndenaryToList = list(map(int,denaryStr))\nbitsList = [0,0,0,0,0,0,0,0]\n# print(denaryToList)\n'''\nfor x in reversed(denaryToList):\n    for y in reversed(binaryPlaceValues):\n        if y > x:\n            pass",
+        "detail": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "documentation": {}
+    },
+    {
+        "label": "denaryInt",
+        "kind": 5,
+        "importPath": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "description": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "peekOfCode": "denaryInt = int(denaryStr)\ndenaryToList = list(map(int,denaryStr))\nbitsList = [0,0,0,0,0,0,0,0]\n# print(denaryToList)\n'''\nfor x in reversed(denaryToList):\n    for y in reversed(binaryPlaceValues):\n        if y > x:\n            pass\n        elif:",
+        "detail": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "documentation": {}
+    },
+    {
+        "label": "denaryToList",
+        "kind": 5,
+        "importPath": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "description": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "peekOfCode": "denaryToList = list(map(int,denaryStr))\nbitsList = [0,0,0,0,0,0,0,0]\n# print(denaryToList)\n'''\nfor x in reversed(denaryToList):\n    for y in reversed(binaryPlaceValues):\n        if y > x:\n            pass\n        elif:\n    print(x)",
+        "detail": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "documentation": {}
+    },
+    {
+        "label": "bitsList",
+        "kind": 5,
+        "importPath": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "description": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "peekOfCode": "bitsList = [0,0,0,0,0,0,0,0]\n# print(denaryToList)\n'''\nfor x in reversed(denaryToList):\n    for y in reversed(binaryPlaceValues):\n        if y > x:\n            pass\n        elif:\n    print(x)\n'''",
+        "detail": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "documentation": {}
+    },
+    {
+        "label": "bitsListRev",
+        "kind": 5,
+        "importPath": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "description": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "peekOfCode": "bitsListRev = list(reversed(bitsList))\nprint(bitsListRev)\n# TODO: Auto-scale bitsList size, error handling, from binary to denary, handle negative numbers, use bitLists properly, auto calculate\n#       binary place values, not have awful strings",
+        "detail": "__OLD.__OLDconvertDenaryToBitsOriginal",
+        "documentation": {}
+    },
+    {
+        "label": "binaryOperations",
+        "kind": 6,
+        "importPath": "binConvertClass",
+        "description": "binConvertClass",
+        "peekOfCode": "class binaryOperations:\n    @staticmethod\n    def findLargestPowerOfTwo(inputInt: int):\n        power = int(2)\n        while power < inputInt:\n            power = power * 2\n        return power\n    @staticmethod\n    def findNeededBitsToStoreInt(inputInt: int):\n        quantity = int(1)",
+        "detail": "binConvertClass",
+        "documentation": {}
+    }
+]
